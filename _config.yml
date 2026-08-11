@@ -59,7 +59,7 @@ plugins:
 
 author:
   name     : "Marysia Kaminski"
-  avatar   : "/assets/images/headshot.jpg"
+  avatar   : "/assets/images/bio-photo.jpg"
   bio      : "Software engineer who enjoys building thoughtful, human-centered products. (sample bio text — replace me)"
   location : "Sample City, Sample Country"
   links:
