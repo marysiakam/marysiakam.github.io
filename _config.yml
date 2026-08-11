@@ -18,7 +18,7 @@ email: markam9889@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Marysia’s personal website: A little corner of the internet to share about my work, projects, and personal interests.
 github_username: marysiakam
-minimal_mistakes_skin: dirt
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
@@ -58,6 +58,8 @@ author:
   name     : "Marysia Kaminska"
   avatar   : "/assets/images/mkaminska_DSCF2863_sm_sq.jpg"
   bio      : "Senior Product Manager at Microsoft"
+  role     : "senior-pm"
+  team     : "azure-compute"
   location : "Seattle, WA"
   links:
     - label: "LinkedIn"

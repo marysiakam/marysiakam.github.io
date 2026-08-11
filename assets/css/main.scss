@@ -2,18 +2,51 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+/* ==========================================================================
+   Provisioning - theme tokens
+   Assigned before the skin/theme imports so they win over the theme's
+   `!default` values (Sass only assigns a `!default` var if it's unset).
+   ========================================================================== */
+
+$background-color: #12181A;
+$text-color: #D8E4E0;
+$primary-color: #7C9CBF;
+$border-color: #26302F;
+$code-background-color: #0E1315;
+$code-background-color-dark: #0A0E10;
+$form-background-color: #161D20;
+$footer-background-color: #0E1315;
+$link-color: #7C9CBF;
+$link-color-hover: #9CB6D2;
+$link-color-visited: #6485A6;
+$masthead-link-color: #D8E4E0;
+$masthead-link-color-hover: #7C9CBF;
+$navicon-link-color-hover: #1B2326;
+
+// Widen the author sidebar (theme default: 200px / 300px)
+$right-sidebar-width-narrow: 300px;
+$right-sidebar-width: 340px;
+$right-sidebar-width-wide: 400px;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* Use theme defaults for fonts (removed custom Google font) */
+/* ==========================================================================
+   Provisioning - layout & type
+   ========================================================================== */
+
+$status-good: #6FCF97;
+
+body {
+  background-color: $background-color;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 28px);
+}
 
 .page__content p {
   font-size: 0.9rem;
   line-height: 1.55;
-}
-
-.site-title, .author__name, .sidebar__title {
-  font-size: 1.15em;
 }
 
 /* Restore opaque sidebar and remove any blur/translucency overrides */
@@ -29,9 +62,197 @@
   .sidebar .author__content, .sidebar .author__avatar { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; filter: none !important; }
 }
 
-/* Teaser grid on homepage */
+/*
+   Masthead - dark bar, monospace title, "$ " prompt nav
+   ========================================================================== */
+
+.masthead {
+  background-color: $form-background-color;
+}
+
+.masthead__inner-wrap {
+  font-family: $monospace-code;
+}
+
+.site-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.masthead__menu-item a {
+  .nav-prompt {
+    color: $border-color;
+  }
+  &.is-current {
+    color: $primary-color;
+    .nav-prompt { color: $primary-color; }
+  }
+}
+
+/*
+   Author sidebar - profile panel
+   ========================================================================== */
+
+.sidebar {
+  font-family: $monospace-code;
+}
+
+.author__avatar {
+  position: relative;
+
+  @media (min-width: 64em) {
+    width: fit-content;
+  }
+
+  img {
+    border-radius: 6px;
+    border: 1px solid $border-color;
+
+    @media (min-width: 64em) {
+      max-width: 132px;
+    }
+  }
+}
+
+.author__status-dot {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: $status-good;
+  border: 3px solid $form-background-color;
+
+  @include breakpoint(max-width ($large - 1)) {
+    display: none;
+  }
+}
+
+.author__name {
+  font-family: $monospace-code;
+  font-weight: 700;
+  font-size: $type-size-5;
+}
+
+.author__kv {
+  margin: 0.75em 0 0;
+  font-size: $type-size-6;
+
+  div {
+    display: flex;
+    gap: 0.6em;
+    padding: 0.2em 0;
+  }
+
+  dt {
+    flex: 0 0 auto;
+    width: 3.6em;
+    color: mix($text-color, $background-color, 55%);
+  }
+
+  dd {
+    margin: 0;
+    color: $text-color;
+  }
+}
+
+.author__urls-wrapper .btn { display: none; }
+
+.author__urls.social-icons {
+  display: block !important;
+  position: relative !important;
+  margin: 0.75em 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.4em;
+
+  &::before, &::after { display: none !important; }
+
+  li { white-space: normal; }
+
+  a {
+    display: inline-block;
+    margin: 0;
+    padding: 0.3em 0.6em;
+    font-size: $type-size-7;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    text-decoration: none;
+    color: mix($text-color, $background-color, 70%);
+
+    &:hover {
+      color: $primary-color;
+      border-color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+/*
+   Homepage - service-card teasers
+   ========================================================================== */
+
+.homepage-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: $monospace-code;
+  font-size: $type-size-7;
+  letter-spacing: 0.04em;
+  color: $status-good;
+  background: mix($status-good, $background-color, 8%);
+  border: 1px solid mix($status-good, $background-color, 30%);
+  border-radius: 4px;
+  padding: 0.3em 0.6em;
+  margin-bottom: 1em;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $status-good;
+  }
+}
+
 .homepage-teasers { margin-top: 2rem; }
+.homepage-teasers h2 {
+  font-family: $monospace-code;
+  font-size: $type-size-5;
+  text-transform: lowercase;
+}
 .homepage-teasers .teasers { display: flex; gap: 1rem; flex-wrap: wrap; }
-.homepage-teasers .teaser { flex: 1 1 220px; background: transparent; padding: 0.6rem; border-radius: 6px; }
-.homepage-teasers .teaser h3 { margin: 0 0 0.3rem 0; font-size: 1rem; }
-.homepage-teasers .teaser p { margin: 0; color: inherit; opacity: 0.95; }
+.homepage-teasers .teaser {
+  flex: 1 1 220px;
+  background: $form-background-color;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 1.1rem;
+}
+.homepage-teasers .teaser-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.homepage-teasers .teaser h3 {
+  margin: 0;
+  font-family: $monospace-code;
+  font-size: $type-size-6;
+  font-weight: 600;
+
+  a { text-decoration: none; }
+}
+.homepage-teasers .teaser-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $status-good;
+  flex-shrink: 0;
+}
+.homepage-teasers .teaser p { margin: 0; font-size: 0.84rem; color: mix($text-color, $background-color, 65%); }

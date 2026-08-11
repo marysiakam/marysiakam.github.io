@@ -11,11 +11,13 @@ title: "About Me"
 {% assign parts = about_raw | split: '---' %}
 {% assign about_body = parts | last %}
 
+<span class="homepage-eyebrow">system status: online</span>
+
 {{ about_body | markdownify }}
 
 
 <section class="homepage-teasers">
-	<h2>Explore</h2>
+	<h2>services</h2>
 	<div class="teasers">
 		{% assign exp_page = site.pages | where: "path", "_pages/experience.md" | first %}
 		{% if exp_page and exp_page.teaser %}
@@ -48,17 +50,26 @@ title: "About Me"
 		{% endif %}
 
 		<article class="teaser">
-			<h3><a href="{{ exp_page.url | default: '/experience/' }}">Experience</a></h3>
+			<div class="teaser-head">
+				<h3><a href="{{ exp_page.url | default: '/experience/' }}">root/experience</a></h3>
+				<span class="teaser-dot"></span>
+			</div>
 			<p>{{ exp_para | markdownify | strip_html | truncate: 180 }}</p>
 		</article>
 
 		<article class="teaser">
-			<h3><a href="{{ proj_page.url | default: '/projects/' }}">Projects</a></h3>
+			<div class="teaser-head">
+				<h3><a href="{{ proj_page.url | default: '/projects/' }}">root/projects</a></h3>
+				<span class="teaser-dot"></span>
+			</div>
 			<p>{{ proj_para | markdownify | strip_html | truncate: 180 }}</p>
 		</article>
 
 		<article class="teaser">
-			<h3><a href="{{ mus_page.url | default: '/musings/' }}">Musings</a></h3>
+			<div class="teaser-head">
+				<h3><a href="{{ mus_page.url | default: '/musings/' }}">root/musings</a></h3>
+				<span class="teaser-dot"></span>
+			</div>
 			<p>{{ mus_para | markdownify | strip_html | truncate: 180 }}</p>
 		</article>
 	</div>
