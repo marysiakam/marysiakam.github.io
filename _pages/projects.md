@@ -5,7 +5,7 @@ permalink: /projects/
 author_profile: true
 ---
 
-<p class="page-subheading">Here are some of my professional and personal projects I've worked on.</p>
+<p class="page-subheading">Here are a few of my professional and personal projects:</p>
 
 <div class="projects-grid">
   {% for project in site.data.projects %}
