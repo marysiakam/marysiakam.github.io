@@ -1,0 +1,23 @@
+# Projects for the /projects/ page.
+# `type` is "work" or "personal" and drives the tag pill + link icon.
+# `link` is the destination when the pane is clicked (blog post for work, repo for personal).
+
+- title: "OpenHCL"
+  blurb: "Evolving Azure's virtualization model with a new guest paravisor."
+  type: work
+  link: "https://techcommunity.microsoft.com/blog/windowsosplatform/openhcl-evolving-azure%e2%80%99s-virtualization-model/4248345"
+
+- title: "Roadtrip Weather Forecast"
+  blurb: "Plan and see hourly weather forecast timed to your ETA at each stop."
+  type: personal
+  link: "https://github.com/marysiakam/roadtrip-weather-app"
+
+- title: "Streamlined Connectivity for Microsoft Defender for Endpoint"
+  blurb: "A new device connectivity and onboarding experience for MDE."
+  type: work
+  link: "https://techcommunity.microsoft.com/blog/microsoftdefenderatpblog/announcing-a-streamlined-device-connectivity-experience-for-microsoft-defender-f/3956236"
+
+- title: "Microsoft Defender for Endpoint Health Reporting"
+  blurb: "Comprehensive health and security reporting of endpoints."
+  type: work
+  link: "https://techcommunity.microsoft.com/blog/microsoftdefenderatpblog/new-device-health-reporting-for-microsoft-defender-for-endpoint-is-now-generally/3589287"

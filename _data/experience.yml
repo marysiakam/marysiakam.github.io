@@ -1,0 +1,110 @@
+# Work experience, most recent company first.
+# Each company can have one or more roles (most recent role first).
+# `logo` renders an image badge; when absent, `initials` renders a text badge instead
+# (used for McGill and Mobeewave, where no usable logo image was found).
+
+- company: "Microsoft"
+  initials: "MS"
+  logo: "/assets/images/logos/microsoft.png"
+  total: "5 yrs 5 mos"
+  roles:
+    - title: "Senior Product Manager, Azure"
+      start: "Aug 2025"
+      end: "Present"
+      location: "Seattle, WA"
+      bullets:
+        - "Own security and fleet efficiency for the core infrastructure powering all of Azure, including OpenHCL virtualization and Trusted Launch for Azure VMs."
+    - title: "Product Manager 2, Azure"
+      start: "Mar 2024"
+      end: "Aug 2025"
+      location: "Redmond, WA"
+      bullets:
+        - "Product Manager on Azure Compute."
+    - title: "Product Manager 2, Defender for Endpoint"
+      start: "Mar 2023"
+      end: "Mar 2024"
+      location: "Redmond, WA"
+      bullets:
+        - "Product Manager on Microsoft Defender for Endpoint."
+    - title: "Product Manager, Defender for Endpoint"
+      start: "Apr 2021"
+      end: "Mar 2023"
+      location: "Redmond, WA"
+      bullets:
+        - "Product Manager on Microsoft Defender for Endpoint."
+    - title: "Product Manager Intern"
+      start: "May 2020"
+      end: "Aug 2020"
+      location: "Redmond, WA"
+      bullets: []
+
+- company: "McGill University"
+  initials: "MU"
+  roles:
+    - title: "Undergraduate Teaching Assistant"
+      start: "Sep 2019"
+      end: "Jan 2020"
+      location: "Montreal, QC"
+      bullets:
+        - "TEAM mentor for Intro to Computer Science (COMP 202); held weekly office hours and built practice exercises."
+
+- company: "Morgan Stanley"
+  initials: "MO"
+  logo: "/assets/images/logos/morganstanley.jpg"
+  roles:
+    - title: "Software Engineer Intern"
+      start: "May 2019"
+      end: "Aug 2019"
+      location: "Montreal, QC"
+      bullets:
+        - "App dev intern in the Access Management (Technology Risk) group."
+
+- company: "Monthly Dignity / Dignité Mensuelle"
+  initials: "MD"
+  logo: "/assets/images/logos/monthlydignity.png"
+  total: "1 yr 5 mos"
+  roles:
+    - title: "VP Internal"
+      start: "Sep 2018"
+      end: "May 2019"
+      location: "Montreal, QC"
+      bullets:
+        - "Organized on-campus fundraising and donation events; coordinated product delivery with shelters."
+    - title: "Project Manager"
+      start: "Jan 2018"
+      end: "Sep 2018"
+      location: "Montreal, QC"
+      bullets:
+        - "Interim project manager in the founders' absence; managed budget and stakeholder engagement."
+
+- company: "Mobeewave"
+  initials: "MW"
+  roles:
+    - title: "Application Developer Intern"
+      start: "Jan 2019"
+      end: "Apr 2019"
+      location: ""
+      bullets:
+        - "Built Java/Bash automation test tools to simplify data logging and testing."
+
+- company: "TD"
+  initials: "TD"
+  logo: "/assets/images/logos/td.svg"
+  roles:
+    - title: "Business Analyst Intern"
+      start: "May 2018"
+      end: "Aug 2018"
+      location: "Greater Toronto Area, ON"
+      bullets:
+        - "Forecasted development costs and improved invoicing/vendor management processes."
+
+- company: "New Jersey Office of the Public Defender"
+  initials: "NJ"
+  logo: "/assets/images/logos/njdefender.png"
+  roles:
+    - title: "Intern for the Chief Investigator"
+      start: "Jun 2017"
+      end: "Aug 2017"
+      location: "Trenton, NJ"
+      bullets:
+        - "Collected and analyzed confidential evidence alongside the defense team at crime scenes."

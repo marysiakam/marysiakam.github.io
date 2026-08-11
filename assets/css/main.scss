@@ -148,7 +148,7 @@ body {
   dt {
     flex: 0 0 auto;
     width: 3.6em;
-    color: mix($text-color, $background-color, 55%);
+    color: $status-good;
   }
 
   dd {
@@ -176,17 +176,23 @@ body {
   li { white-space: normal; }
 
   a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
     margin: 0;
-    padding: 0.3em 0.6em;
+    padding: 0.3em 0.65em;
     font-size: $type-size-7;
-    border: 1px solid $border-color;
+    border: 1px solid mix($primary-color, $background-color, 35%);
     border-radius: 5px;
     text-decoration: none;
-    color: mix($text-color, $background-color, 70%);
+    color: $primary-color;
+    background: mix($primary-color, $background-color, 8%);
+
+    i { font-size: 0.95em; }
 
     &:hover {
-      color: $primary-color;
+      color: $background-color;
+      background: $primary-color;
       border-color: $primary-color;
       text-decoration: none;
     }
@@ -228,7 +234,7 @@ body {
 }
 .homepage-teasers .teasers { display: flex; gap: 1rem; flex-wrap: wrap; }
 .homepage-teasers .teaser {
-  flex: 1 1 220px;
+  flex: 0 1 220px;
   background: $form-background-color;
   border: 1px solid $border-color;
   border-radius: 6px;
@@ -255,4 +261,283 @@ body {
   background: $status-good;
   flex-shrink: 0;
 }
-.homepage-teasers .teaser p { margin: 0; font-size: 0.84rem; color: mix($text-color, $background-color, 65%); }
+
+/*
+   Experience page - LinkedIn-style timeline
+   ========================================================================== */
+
+.experience-timeline {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.experience-company {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 2.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    left: 21px;
+    width: 1px;
+    background: $border-color;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+
+    &::before { display: none; }
+  }
+}
+
+.experience-badge {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: $form-background-color;
+  border: 1px solid $border-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $monospace-code;
+  font-size: $type-size-6;
+  font-weight: 700;
+  color: $primary-color;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.experience-badge--logo {
+  background: #fff;
+  padding: 6px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.experience-company-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+
+.experience-company-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  flex-wrap: wrap;
+
+  h2 {
+    margin: 0;
+    font-size: $type-size-5;
+    border-bottom: none;
+  }
+}
+
+.experience-total {
+  font-family: $monospace-code;
+  font-size: $type-size-7;
+  color: mix($text-color, $background-color, 55%);
+}
+
+.experience-roles {
+  margin-top: 0.75rem;
+}
+
+.experience-role {
+  padding: 0.85rem 0;
+  border-top: 1px solid $border-color;
+
+  &:first-child { border-top: none; padding-top: 0; }
+}
+
+.experience-role-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+
+  h3 {
+    margin: 0;
+    font-size: $type-size-6;
+  }
+}
+
+.experience-dates {
+  flex: 0 0 auto;
+  font-family: $monospace-code;
+  font-size: $type-size-7;
+  color: mix($text-color, $background-color, 55%);
+  white-space: nowrap;
+}
+
+.experience-location {
+  margin-top: 0.15rem;
+  font-size: $type-size-7;
+  color: mix($text-color, $background-color, 60%);
+}
+
+.experience-bullets {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1em;
+
+  li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: mix($text-color, $background-color, 88%);
+    margin-bottom: 0.3em;
+  }
+}
+
+/*
+   Shared page intro elements - subheading + CTA link
+   ========================================================================== */
+
+.page-subheading {
+  margin: 0.25rem 0 1.25rem;
+  font-size: 0.92rem;
+  color: mix($text-color, $background-color, 75%);
+}
+
+.page-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.25rem 0 1.25rem;
+  padding: 0.45em 0.85em;
+  font-size: $type-size-7;
+  font-family: $monospace-code;
+  border: 1px solid mix($primary-color, $background-color, 35%);
+  border-radius: 5px;
+  color: $primary-color;
+  background: mix($primary-color, $background-color, 8%);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $background-color;
+    background: $primary-color;
+    border-color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+/*
+   Contact page - form
+   ========================================================================== */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 480px;
+  margin-top: 1rem;
+  padding: 1.25rem;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+
+  label {
+    font-family: $monospace-code;
+    font-size: $type-size-7;
+    color: $status-good;
+    margin-top: 0.6rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.6em 0.7em;
+    font-family: $global-font-family;
+    font-size: 0.9rem;
+    color: $text-color;
+    background: $form-background-color;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+
+  .page-cta {
+    align-self: flex-start;
+    margin-top: 1rem;
+    border-width: 1px;
+    border-style: solid;
+    font-size: $type-size-6;
+  }
+}
+
+/*
+   Projects page - clickable panes
+   ========================================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  display: block;
+  background: $form-background-color;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 1.1rem;
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+
+  &:hover {
+    border-color: $primary-color;
+    text-decoration: none;
+  }
+
+  h3 {
+    margin: 0.6rem 0 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text-color;
+  }
+
+  p {
+    margin: 0.4rem 0 0;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    color: mix($text-color, $background-color, 78%);
+  }
+}
+
+.project-tag {
+  display: inline-block;
+  font-family: $monospace-code;
+  font-size: $type-size-8;
+  letter-spacing: 0.03em;
+  padding: 0.2em 0.55em;
+  border-radius: 4px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.project-tag--work {
+  color: $primary-color;
+  background: mix($primary-color, $background-color, 12%);
+  border-color: mix($primary-color, $background-color, 35%);
+}
+
+.project-tag--personal {
+  color: $status-good;
+  background: mix($status-good, $background-color, 8%);
+  border-color: mix($status-good, $background-color, 30%);
+}

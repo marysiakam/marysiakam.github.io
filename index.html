@@ -20,41 +20,15 @@ title: "About Me"
 	<h2>services</h2>
 	<div class="teasers">
 		{% assign exp_page = site.pages | where: "path", "_pages/experience.md" | first %}
-		{% if exp_page and exp_page.teaser %}
-			{% assign exp_para = exp_page.teaser %}
-		{% else %}
-			{% capture exp_raw %}{% include_relative _pages/experience.md %}{% endcapture %}
-			{% assign exp_parts = exp_raw | split: '---' %}
-			{% assign exp_body = exp_parts | last %}
-			{% assign exp_para = exp_body | split: '\n\n' | first %}
-		{% endif %}
-
 		{% assign proj_page = site.pages | where: "path", "_pages/projects.md" | first %}
-		{% if proj_page and proj_page.teaser %}
-			{% assign proj_para = proj_page.teaser %}
-		{% else %}
-			{% capture proj_raw %}{% include_relative _pages/projects.md %}{% endcapture %}
-			{% assign proj_parts = proj_raw | split: '---' %}
-			{% assign proj_body = proj_parts | last %}
-			{% assign proj_para = proj_body | split: '\n\n' | first %}
-		{% endif %}
-
 		{% assign mus_page = site.pages | where: "path", "_pages/musings.md" | first %}
-		{% if mus_page and mus_page.teaser %}
-			{% assign mus_para = mus_page.teaser %}
-		{% else %}
-			{% capture mus_raw %}{% include_relative _pages/musings.md %}{% endcapture %}
-			{% assign mus_parts = mus_raw | split: '---' %}
-			{% assign mus_body = mus_parts | last %}
-			{% assign mus_para = mus_body | split: '\n\n' | first %}
-		{% endif %}
+		{% assign contact_page = site.pages | where: "path", "_pages/contact.md" | first %}
 
 		<article class="teaser">
 			<div class="teaser-head">
 				<h3><a href="{{ exp_page.url | default: '/experience/' }}">root/experience</a></h3>
 				<span class="teaser-dot"></span>
 			</div>
-			<p>{{ exp_para | markdownify | strip_html | truncate: 180 }}</p>
 		</article>
 
 		<article class="teaser">
@@ -62,7 +36,6 @@ title: "About Me"
 				<h3><a href="{{ proj_page.url | default: '/projects/' }}">root/projects</a></h3>
 				<span class="teaser-dot"></span>
 			</div>
-			<p>{{ proj_para | markdownify | strip_html | truncate: 180 }}</p>
 		</article>
 
 		<article class="teaser">
@@ -70,7 +43,13 @@ title: "About Me"
 				<h3><a href="{{ mus_page.url | default: '/musings/' }}">root/musings</a></h3>
 				<span class="teaser-dot"></span>
 			</div>
-			<p>{{ mus_para | markdownify | strip_html | truncate: 180 }}</p>
+		</article>
+
+		<article class="teaser">
+			<div class="teaser-head">
+				<h3><a href="{{ contact_page.url | default: '/contact/' }}">root/contact</a></h3>
+				<span class="teaser-dot"></span>
+			</div>
 		</article>
 	</div>
 </section>
