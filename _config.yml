@@ -13,14 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: MK
+email: markam9889@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+  Marysia’s personal website: A little corner of the internet to share about my work, projects, and personal interests.
+github_username: marysiakam
 minimal_mistakes_skin: default
 search: true
 
@@ -58,32 +55,30 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name     : "Marysia Kaminski"
+  name     : "Marysia Kaminska"
   avatar   : "/assets/images/bio-photo.jpg"
-  bio      : "Software engineer who enjoys building thoughtful, human-centered products. (sample bio text — replace me)"
-  location : "Sample City, Sample Country"
+  bio      : "Senior Product Manager at Microsoft"
+  location : "Seattle, WA"
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/sample-profile/"
+      url: "https://www.linkedin.com/in/marysia-kaminska/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/sample-username"
+      url: "https://github.com/marysiakam"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:sample@example.com"
+      url: "mailto:markam9889@gmail.com"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/marysia-kaminska/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/marysiakam"
+  
 
 defaults:
   # _posts

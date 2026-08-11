@@ -1,15 +1,9 @@
 main:
-  - title: "Professional Experience"
+  - title: "Experience"
     url: /experience/
   - title: "Personal Projects"
     url: /projects/
-  - title: "Personal Musings"
+  - title: "Musings"
     url: /musings/
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
   - title: "About"
     url: /about/
