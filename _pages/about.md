@@ -3,7 +3,7 @@ permalink: /about/
 title: "About"
 ---
  
-I am a Senior Product Manager on the Azure Compute team at Microsoft, where I own security and fleet efficiency for the core infrastructure that powers all of Azure. Before this, I worked on Microsoft Defender Endpoint, building security operator experiences for enterprise and government customers. 
+I am a Senior Product Manager on the Azure Compute team at Microsoft, where I own security and fleet efficiency for the operating system and core infrastructure that power all of Azure. Before this, I worked on Microsoft Defender Endpoint, building security operator experiences for enterprise and government customers. 
 
 I studied at McGill University in Montreal, Canada where I double majored in Computer Science & Economics. 
 
