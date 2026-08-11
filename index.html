@@ -2,34 +2,66 @@
 layout: single
 author_profile: true
 title: "About Me"
-feature_row:
-  - title: "Experience"
-    excerpt: "Sample excerpt — a look at my career journey, roles, and skills. (replace me)"
-    url: "/experience/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
-  - title: "Personal Projects"
-    excerpt: "Sample excerpt — things I've built for fun and learning. (replace me)"
-    url: "/projects/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
-  - title: "Musings"
-    excerpt: "Sample excerpt — thoughts and writing on things I find interesting. (replace me)"
-    url: "/musings/"
-    btn_class: "btn--primary"
-    btn_label: "Learn More"
 ---
 
-<p>
+{% capture about_raw %}
+{% include_relative _pages/about.md %}
+{% endcapture %}
 
-I'm a Senior Product Manager on the Azure Compute team at Microsoft, where I drive OS security and fleet efficiency initiatives across one of the largest clouds in the world. My work sits at the intersection of platform security, fleet efficiency, and reliability-- keeping the systems running Azure's compute fleet safe and performant at hyperscale.
+{% assign parts = about_raw | split: '---' %}
+{% assign about_body = parts | last %}
 
-Before Azure, I worked on the Microsoft Defender for Endpoint team, where I built cybersecurity operator products used by enterprise and government customers to detect and respond to real world threats.
+{{ about_body | markdownify }}
 
-I studied Computer Science and Economics at McGill University in Montreal, a combination that shaped how I think about both the technical tradeoffs and the incentives behind the products I build.
 
-Outside of work, I spend most of my time outdoors: rock climbing, trail running, and skiing. When I'm not outside, I read, crochet, and grow vegetables in my garden.
+<section class="homepage-teasers">
+	<h2>Explore</h2>
+	<div class="teasers">
+		{% assign exp_page = site.pages | where: "path", "_pages/experience.md" | first %}
+		{% if exp_page and exp_page.teaser %}
+			{% assign exp_para = exp_page.teaser %}
+		{% else %}
+			{% capture exp_raw %}{% include_relative _pages/experience.md %}{% endcapture %}
+			{% assign exp_parts = exp_raw | split: '---' %}
+			{% assign exp_body = exp_parts | last %}
+			{% assign exp_para = exp_body | split: '\n\n' | first %}
+		{% endif %}
 
-</p>
+		{% assign proj_page = site.pages | where: "path", "_pages/projects.md" | first %}
+		{% if proj_page and proj_page.teaser %}
+			{% assign proj_para = proj_page.teaser %}
+		{% else %}
+			{% capture proj_raw %}{% include_relative _pages/projects.md %}{% endcapture %}
+			{% assign proj_parts = proj_raw | split: '---' %}
+			{% assign proj_body = proj_parts | last %}
+			{% assign proj_para = proj_body | split: '\n\n' | first %}
+		{% endif %}
 
-{% include feature_row %}
+		{% assign mus_page = site.pages | where: "path", "_pages/musings.md" | first %}
+		{% if mus_page and mus_page.teaser %}
+			{% assign mus_para = mus_page.teaser %}
+		{% else %}
+			{% capture mus_raw %}{% include_relative _pages/musings.md %}{% endcapture %}
+			{% assign mus_parts = mus_raw | split: '---' %}
+			{% assign mus_body = mus_parts | last %}
+			{% assign mus_para = mus_body | split: '\n\n' | first %}
+		{% endif %}
+
+		<article class="teaser">
+			<h3><a href="{{ exp_page.url | default: '/experience/' }}">Experience</a></h3>
+			<p>{{ exp_para | markdownify | strip_html | truncate: 180 }}</p>
+		</article>
+
+		<article class="teaser">
+			<h3><a href="{{ proj_page.url | default: '/projects/' }}">Projects</a></h3>
+			<p>{{ proj_para | markdownify | strip_html | truncate: 180 }}</p>
+		</article>
+
+		<article class="teaser">
+			<h3><a href="{{ mus_page.url | default: '/musings/' }}">Musings</a></h3>
+			<p>{{ mus_para | markdownify | strip_html | truncate: 180 }}</p>
+		</article>
+	</div>
+</section>
+
+

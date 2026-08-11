@@ -2,7 +2,7 @@
 permalink: /about/
 title: "About"
 ---
+ 
+Senior Product Manager on Azure Compute at Microsoft, driving security and fleet efficiency initatives across the core infrastructure powering all of Azure. Before this, I worked on Microsoft Defender Endpoint, building security operator experiences for enterprise and government customers.
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
-
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+Outside of work, I like to spend my time outdoors rock climbing, trail running, and skiing. On quieter days, I enjoy reading, crocheting, and working on my vegetable garden.

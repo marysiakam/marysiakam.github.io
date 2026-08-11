@@ -1,7 +1,9 @@
 main:
+  - title: "Home"
+    url: /
   - title: "Experience"
     url: /experience/
-  - title: "Personal Projects"
+  - title: "Projects"
     url: /projects/
   - title: "Musings"
     url: /musings/
