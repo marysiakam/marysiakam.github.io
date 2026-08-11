@@ -1,4 +1,10 @@
 main:
+  - title: "Professional Experience"
+    url: /experience/
+  - title: "Personal Projects"
+    url: /projects/
+  - title: "Personal Musings"
+    url: /musings/
   - title: "Posts"
     url: /posts/
   - title: "Categories"

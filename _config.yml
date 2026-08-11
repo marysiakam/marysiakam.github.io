@@ -58,22 +58,20 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name     : "Marysia Kaminski"
+  avatar   : "/assets/images/headshot.jpg"
+  bio      : "Software engineer who enjoys building thoughtful, human-centered products. (sample bio text — replace me)"
+  location : "Sample City, Sample Country"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/sample-profile/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/sample-username"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:sample@example.com"
 
 footer:
   links:
