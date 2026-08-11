@@ -2,22 +2,32 @@
 # `type` is "work" or "personal" and drives the tag pill + link icon.
 # `link` is the destination when the pane is clicked (blog post for work, repo for personal).
 
-- title: "OpenHCL"
+- title: "OpenHCL guest virtualization"
   blurb: "Evolving Azure's virtualization model with a new guest paravisor."
   type: work
   link: "https://techcommunity.microsoft.com/blog/windowsosplatform/openhcl-evolving-azure%e2%80%99s-virtualization-model/4248345"
 
-- title: "Roadtrip Weather Forecast"
-  blurb: "Plan and see hourly weather forecast timed to your ETA at each stop."
+- title: "Roadtrip Weather Forecast App"
+  blurb: "Weather mapped to incremental points along your long drive."
   type: personal
   link: "https://github.com/marysiakam/roadtrip-weather-app"
 
-- title: "Streamlined Connectivity for Microsoft Defender for Endpoint"
+- title: "Streamlined device connectivity for MDE"
   blurb: "A new device connectivity and onboarding experience for MDE."
   type: work
   link: "https://techcommunity.microsoft.com/blog/microsoftdefenderatpblog/announcing-a-streamlined-device-connectivity-experience-for-microsoft-defender-f/3956236"
 
-- title: "Microsoft Defender for Endpoint Health Reporting"
+- title: "Device health reporting for MDE"
   blurb: "Comprehensive health and security reporting of endpoints."
   type: work
   link: "https://techcommunity.microsoft.com/blog/microsoftdefenderatpblog/new-device-health-reporting-for-microsoft-defender-for-endpoint-is-now-generally/3589287"
+
+- title: "Performance analyzer for Microsoft Defender Antivirus"
+  blurb: "A new tool to analyze and monitor Defender AV performance."
+  type: work
+  link: "https://techcommunity.microsoft.com/blog/microsoftdefenderatpblog/announcing-performance-analyzer-for-microsoft-defender-antivirus/2713911"
+
+- title: "Cloud protection for Microsoft Defender Antivirus"
+  blurb: "Cloud protection in Microsoft Defender Antivirus delivers accurate, real-time, and intelligent protection."
+  type: work
+  link: "https://learn.microsoft.com/en-us/defender-endpoint/enable-cloud-protection-microsoft-defender-antivirus?view=o365-worldwide"
