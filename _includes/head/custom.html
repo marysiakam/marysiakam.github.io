@@ -15,22 +15,36 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 <script>
-// Prefix primary nav links with a "$ " prompt, and mark the current page
+// Prefix primary nav links with an icon, and mark the current page
 document.addEventListener('DOMContentLoaded', function(){
+  var ICONS = {
+    home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>',
+    experience: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
+    projects: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg>',
+    musings: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>',
+    contact: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
+  };
+
   var navLinks = document.querySelectorAll('nav.greedy-nav .masthead__menu-item a');
   navLinks.forEach(function(a){
     try{
-      var prompt = document.createElement('span');
-      prompt.className = 'nav-prompt';
-      prompt.setAttribute('aria-hidden', 'true');
-      prompt.textContent = '$ ';
-      a.insertBefore(prompt, a.firstChild);
-
       var path = a.getAttribute('href');
       if(!path) return;
       if(path.indexOf('/') === 0 && path.indexOf('?') === -1 && path.indexOf('#') === -1) {
         if(path !== '/' && path.slice(-1) !== '/') path = path + '/';
       }
+
+      var key = 'home';
+      Object.keys(ICONS).forEach(function(name){
+        if(path.indexOf('/' + name + '/') !== -1) key = name;
+      });
+
+      var prompt = document.createElement('span');
+      prompt.className = 'nav-prompt';
+      prompt.setAttribute('aria-hidden', 'true');
+      prompt.innerHTML = ICONS[key];
+      a.insertBefore(prompt, a.firstChild);
+
       if (path === location.pathname) {
         a.classList.add('is-current');
       }

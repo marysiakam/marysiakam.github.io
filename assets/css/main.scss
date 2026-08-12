@@ -81,7 +81,12 @@ body {
 
 .masthead__menu-item a {
   .nav-prompt {
+    display: inline-flex;
+    align-items: center;
+    margin-inline-end: 0.4em;
     color: $border-color;
+
+    svg { width: 1em; height: 1em; }
   }
   &.is-current {
     color: $primary-color;
