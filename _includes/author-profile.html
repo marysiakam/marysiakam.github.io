@@ -19,11 +19,13 @@
     </h3>
 
     {% if author.role or author.team %}
+      <div class="author__rule" aria-hidden="true">&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</div>
       <dl class="author__kv" itemprop="description">
         {% if author.role %}<div><dt>role</dt><dd>{{ author.role }}</dd></div>{% endif %}
         {% if author.team %}<div><dt>team</dt><dd>{{ author.team }}</dd></div>{% endif %}
         {% if author.location %}<div><dt>region</dt><dd>{{ author.location }}</dd></div>{% endif %}
       </dl>
+      <div class="author__rule" aria-hidden="true">&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;</div>
     {% elsif author.bio %}
       <div class="author__bio p-note" itemprop="description">
         {{ author.bio | markdownify }}

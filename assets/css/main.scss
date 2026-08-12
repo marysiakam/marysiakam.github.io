@@ -36,12 +36,32 @@ $right-sidebar-width-wide: 400px;
    ========================================================================== */
 
 $status-good: #6FCF97;
+$display-serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
 
 body {
   background-color: $background-color;
   background-image:
     repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 28px),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 28px);
+}
+
+/* Grain texture — a near-invisible noise layer over the whole page so the
+   background reads as material rather than a flat fill. Remove this block
+   to revert. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.page__title {
+  font-family: $display-serif;
+  font-weight: 600;
 }
 
 .page__content p {
@@ -135,9 +155,21 @@ body {
 }
 
 .author__name {
+  font-family: $display-serif;
+  font-weight: 600;
+  font-size: $type-size-5 * 1.15;
+}
+
+/* Box-drawing dividers between sidebar blocks — decorative only, no markup change to
+   anything but the forked author-profile.html include. Remove .author__rule usage there
+   (and this rule) to revert. */
+.author__rule {
+  margin: 0.85em 0;
+  color: mix($text-color, $background-color, 40%);
   font-family: $monospace-code;
-  font-weight: 700;
-  font-size: $type-size-5;
+  font-size: $type-size-7;
+  letter-spacing: 0.02em;
+  user-select: none;
 }
 
 .author__kv {
