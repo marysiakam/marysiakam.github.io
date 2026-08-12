@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Marysia’s personal website: A little corner of the internet to share about my work, projects, and personal interests.
 github_username: marysiakam
 minimal_mistakes_skin: dark
-search: true
+search: false
 
 # Build settings
 markdown: kramdown
